@@ -1,8 +1,20 @@
-import numpy as np
 import random
+from students_list import students
 
-i = random.randint(0,n)
-np.random.randint(2, size=10)
-np.random.randint(5, size=(2, 4))
-a = random.randint(5, size=(2, 4))
-print(i,a)
+n =  12
+groups = {}
+g = 1
+
+while len(students) != 0 :
+	i = random.randint(0,len(students) - 1)
+	a = students.pop(i)
+
+	if g not in groups :
+		groups[g] = []
+	groups[g].append(a)
+
+	g += 1
+	if g > n:
+		g = 1
+
+print(groups)
